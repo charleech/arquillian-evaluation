@@ -42,3 +42,18 @@ It can be done by setting the jvm.
    * -Djava.endorsed.dirs=PATH/TO/ARQUILLIAN_GF_ROOT/modules/endorsed
    * e.g.
    -Djava.endorsed.dirs=c:/myprj/local-glassfish-embedded-312/modules/endorsed
+
+Note for logging
+================
+
+1. The JUnit logging configuration is at
+**_src/test/resources/logback-test.xml_**. It is a logback configuration.
+
+2. The Glassfish embedded logging configuration is at
+**_src/test/resources/arquillian/gf/gf-log.properties_**. It is a Java
+Util Logger (JUL) configuration.
+
+3. The EAR/EJB logging configuration is at
+**_src/test/resources/arquillian/logback-test.xml_**. It is a logback
+configuration.
+
