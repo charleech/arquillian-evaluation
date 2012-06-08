@@ -1,5 +1,5 @@
-arquillian-evaluation
-=====================
+deployment
+==========
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
     <img alt="Creative Commons License" style="border-width:0"
@@ -20,15 +20,9 @@ is licensed under a
    Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
 </a>.
 
-The JBoss Arquillian evaluation
+The JBoss Arquillian evaluation multiple deployment
 
-This is a repository which provides the experimental, lesson learn and trouble
-shooting for evaluating the JavaEE unit testing with JBoss Arquillian.
-It would be nice to have a shared small but completed example coding for
-any further communicating with the opensource community.
-
-Basically, It is based on Apache Maven, JBoss Arquillian, Glassfish embedded,
-including with very nice extensions, i.e. Weld, Hibernate validator,
-Seam Validation, Mojarra, Metro, Primefaces.
+This is a project which provides example for multiple deploying to the
+Arquillian with propose to achieve the Junit test suite.
 
 Please feel free and do not hesitate to join, fork, share or keep improving it.
