@@ -78,8 +78,6 @@ public final class JulResetter extends AbstractMarker implements JulResettable {
         super();
     }
 
-
-
     @Override
     public void reset() {
         this.reset(JulResetter.CONFIGURE);

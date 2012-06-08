@@ -1,17 +1,12 @@
-package org.charleech.arq.eval.deploy;
-
-import javax.ejb.Stateless;
-import javax.jws.WebService;
-
 /**
  * <p>
- * This is a concrete implementing class which provides the feature described
- * at {@link DummyServiceable}.
+ * This is a package which give the demonstration for deploying to the
+ * Arquillian by using Eclipse IDE.
  * </p>
  *
  * @author charlee.ch
  * @version 0.0.1
- * @see DummyServiceable
+ * @since 0.0.1
  * @see <a rel="license"
  *      href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img
  *      alt="Creative Commons License" style="border-width:0"
@@ -25,19 +20,4 @@ import javax.jws.WebService;
  *      href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative
  *      Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
  */
-@Stateless
-@WebService(
-   endpointInterface = "org.charleech.arq.eval.deploy.DummyServiceable",
-   serviceName       = "engine/ejb/DummyService",
-   portName          = "DummyPort"
-)
-public class DummyService implements DummyServiceable {
-
-    @Override
-    public String greet(final String name) {
-        String result = null;
-
-        result = "Hello " + name;
-        return result;
-    }
-}
+package test.org.charleech.arq.eval.eclipse;

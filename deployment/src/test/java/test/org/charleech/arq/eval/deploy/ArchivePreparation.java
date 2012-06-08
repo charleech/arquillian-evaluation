@@ -4,6 +4,7 @@ import java.io.File;
 
 import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 import org.charleech.arq.eval.deploy.DummyServiceable;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -11,6 +12,7 @@ import org.jboss.shrinkwrap.api.spec.EnterpriseArchive;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 
+import test.org.charleech.arq.eval.AbstractMarker;
 import test.org.charleech.arq.eval.ArquillianConstant;
 import test.org.charleech.arq.eval.ArquillianFeatureConstant;
 import test.org.charleech.arq.eval.util.FeatureWrappable;
@@ -27,6 +29,7 @@ import test.org.charleech.arq.eval.util.FeatureWrapper;
  * @since 0.0.1
  * @see ArchivePreparable
  * @see EnterpriseArchive
+ * @see AbstractMarker
  * @see <a rel="license"
  *      href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img
  *      alt="Creative Commons License" style="border-width:0"
@@ -40,7 +43,9 @@ import test.org.charleech.arq.eval.util.FeatureWrapper;
  *      href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative
  *      Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
  */
+@Slf4j
 public final class ArchivePreparation
+           extends AbstractMarker
         implements ArchivePreparable<EnterpriseArchive> {
 
     /**
@@ -110,6 +115,9 @@ public final class ArchivePreparation
                                                  APPLICATION.getValue()).
                      addAsModule(this.createEjb()).
                      addAsModule(this.createWeb());
+            ArchivePreparation.log.info(this.getMarker(),
+                                        "The deploying ear is\r\n{}",
+                                        ear.toString(true));
             return ear;
         } finally {
             ear = null;
@@ -135,6 +143,9 @@ public final class ArchivePreparation
                                    ArquillianFeatureConstant.
                                       LOG_BACK_TEST.getValue()).
                      addPackages(true, DummyServiceable.class.getPackage());
+            ArchivePreparation.log.info(this.getMarker(),
+                                        "The deploying ejb is\r\n{}",
+                                         ejb.toString(true));
             return ejb;
         } finally {
             ejb = null;
@@ -156,6 +167,9 @@ public final class ArchivePreparation
                     addAsWebInfResource(this.getWebXml(),
                                         ArquillianFeatureConstant.
                                            WEB.getValue());
+            ArchivePreparation.log.info(this.getMarker(),
+                                        "The deploying web is\r\n{}",
+                                         web.toString(true));
             return web;
         } finally {
             web = null;

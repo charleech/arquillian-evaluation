@@ -26,3 +26,19 @@ This is a project which provides example for multiple deploying to the
 Arquillian with propose to achieve the Junit test suite.
 
 Please feel free and do not hesitate to join, fork, share or keep improving it.
+
+Note for Eclipse IDE.
+====================
+Since the Eclipse/JUnit does not integrated to the mavan-surefure-plugin,
+then the java endorsed dirs is not existed.
+
+The Eclipse/JUnit should be set the **"java.endorsed.dirs"** explicitly.
+It can be done by setting the jvm.
+
+1. Go to "**Run**" ---> "**Run Configuration**".
+2. Choose **the test case**
+3. Go to "**Arguments**" tab.
+4. Go to "**VM arguments**" text box and enter the following: -
+   * -Djava.endorsed.dirs=PATH/TO/ARQUILLIAN_GF_ROOT/modules/endorsed
+   * e.g.
+   -Djava.endorsed.dirs=c:/myprj/local-glassfish-embedded-312/modules/endorsed

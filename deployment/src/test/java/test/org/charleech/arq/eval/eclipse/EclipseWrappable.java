@@ -1,17 +1,20 @@
-package org.charleech.arq.eval.deploy;
-
-import javax.ejb.Stateless;
-import javax.jws.WebService;
+package test.org.charleech.arq.eval.eclipse;
 
 /**
  * <p>
- * This is a concrete implementing class which provides the feature described
- * at {@link DummyServiceable}.
+ * This is an interface which provides the feature for preparing the Eclipse IDE
+ * for working with the Arquillian.
+ * </p>
+ * <p>
+ * Since the Eclipse/JUnit does not integrated to the mavan-surefure-plugin,
+ * then the system properties will not be existed.
  * </p>
  *
  * @author charlee.ch
  * @version 0.0.1
- * @see DummyServiceable
+ * @since 0.0.1
+ * @see <a href="https://github.com/charleech/arquillian-evaluation/issues/4">
+GitHub Issue #4</a>
  * @see <a rel="license"
  *      href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img
  *      alt="Creative Commons License" style="border-width:0"
@@ -25,19 +28,9 @@ import javax.jws.WebService;
  *      href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative
  *      Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
  */
-@Stateless
-@WebService(
-   endpointInterface = "org.charleech.arq.eval.deploy.DummyServiceable",
-   serviceName       = "engine/ejb/DummyService",
-   portName          = "DummyPort"
-)
-public class DummyService implements DummyServiceable {
-
-    @Override
-    public String greet(final String name) {
-        String result = null;
-
-        result = "Hello " + name;
-        return result;
-    }
+public interface EclipseWrappable {
+    /**
+     * Set the system properties
+     */
+    void setSystemProperties();
 }

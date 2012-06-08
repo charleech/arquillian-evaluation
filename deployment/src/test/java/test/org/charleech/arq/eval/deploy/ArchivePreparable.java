@@ -4,7 +4,7 @@ import org.jboss.shrinkwrap.api.Archive;
 
 /**
  * <p>
- * This is an interface which provides the feature for preparing the deployinh
+ * This is an interface which provides the feature for preparing the deploying
  * archive to the Arquillian.
  * </p>
  *

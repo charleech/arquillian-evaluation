@@ -1,11 +1,10 @@
 package test.org.charleech.arq.eval.deploy;
 
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import test.org.charleech.arq.eval.util.JulResetter;
+import test.org.charleech.arq.eval.AbstractTestSuite;
 
 /**
  * <p>
@@ -16,6 +15,7 @@ import test.org.charleech.arq.eval.util.JulResetter;
  * @author charlee.ch
  * @version 0.0.1
  * @since 0.0.1
+ * @see AbstractTestSuite
  * @see <a rel="license"
  *      href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img
  *      alt="Creative Commons License" style="border-width:0"
@@ -35,15 +35,6 @@ import test.org.charleech.arq.eval.util.JulResetter;
     EarTester1.class,
     EarTester1.class
 })
-public class EarTestSuite {
-    /**
-     * This is a before class configuration. The Java Util Logging (JUL) will be
-     * reset.
-     *
-     * @since 0.0.1
-     */
-    @BeforeClass
-    public static void before() {
-        JulResetter.getINSTANCE().reset();
-    }
+public class EarTestSuite extends AbstractTestSuite {
+
 }
