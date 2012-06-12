@@ -185,7 +185,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${my.lombok.version}</version>
-            <scope>provided</scope>
+            <scope>${my.project.dependency.provided.scope}</scope>
         </dependency>
         <!-- Ignore the real commons-logging by setting the scope to provided
         -->
@@ -193,7 +193,7 @@
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.1.1</version>
-            <scope>provided</scope>
+            <scope>${my.project.dependency.provided.scope}</scope>
         </dependency>
         <!-- SLF4J -->
         <!-- jcl-over-slf4j is a perfect binary-compatible replacement for
@@ -498,7 +498,7 @@
                     <artifactId>jboss-javaee-6.0</artifactId>
                     <version>3.0.1.Final</version>
                     <type>pom</type>
-                    <scope>provided</scope>
+                    <scope>${my.project.dependency.provided.scope}</scope>
                 </dependency>
             </dependencies>
         </profile>
