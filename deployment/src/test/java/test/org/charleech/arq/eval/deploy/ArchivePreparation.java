@@ -7,16 +7,15 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import org.charleech.arq.eval.deploy.DummyServiceable;
+import org.charleech.arq.eval.helper.AbstractMarker;
+import org.charleech.arq.eval.helper.ArquillianConstant;
+import org.charleech.arq.eval.helper.ArquillianFeatureConstant;
+import org.charleech.arq.eval.helper.util.FeatureWrappable;
+import org.charleech.arq.eval.helper.util.FeatureWrapper;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.EnterpriseArchive;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
-
-import test.org.charleech.arq.eval.AbstractMarker;
-import test.org.charleech.arq.eval.ArquillianConstant;
-import test.org.charleech.arq.eval.ArquillianFeatureConstant;
-import test.org.charleech.arq.eval.util.FeatureWrappable;
-import test.org.charleech.arq.eval.util.FeatureWrapper;
 
 /**
  * <p>

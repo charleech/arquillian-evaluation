@@ -1,10 +1,9 @@
 package test.org.charleech.arq.eval.deploy;
 
+import org.charleech.arq.eval.helper.AbstractTestSuite;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-
-import test.org.charleech.arq.eval.AbstractTestSuite;
 
 /**
  * <p>

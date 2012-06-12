@@ -26,4 +26,12 @@
         </my.project.description>
 	</properties>
 
+    <dependencies>
+        <dependency>
+		    <groupId>org.charleech.arq.eval</groupId>
+		    <artifactId>arq-helper</artifactId>
+		    <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>

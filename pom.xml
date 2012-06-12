@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -40,7 +37,9 @@
         <my.project.dependency.test.scope>
             test
         </my.project.dependency.test.scope>
-
+        <my.project.dependency.provided.scope>
+            provided
+        </my.project.dependency.provided.scope>
         <!-- Plugin -->
 		<my.maven.compiler.version>2.4</my.maven.compiler.version>
         <my.maven.resource.version>2.5</my.maven.resource.version>
@@ -73,6 +72,20 @@
 
     <inceptionYear>${my.project.inception.year}</inceptionYear>
 
+	<licenses>
+		<license>
+			<name>
+                Creative Commons Attribution-NonCommercial-ShareAlike 3.0
+                Unported License
+			</name>
+			<url>http://creativecommons.org/licenses/by-nc-sa/3.0/</url>
+			<comments>
+                Please feel free and do not hesitate to join, fork, share or
+                keep improving it.
+            </comments>
+		</license>
+	</licenses>
+
     <organization>
         <name>Charlee Chitsuk</name>
         <url>https://github.com/charleech</url>
@@ -87,6 +100,11 @@
         </developerConnection>
         <url>https://github.com/charleech/arquillian-evaluation</url>
     </scm>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/charleech/arquillian-evaluation/issues</url>
+    </issueManagement>
 
     <prerequisites>
         <maven>${my.project.maven.version}</maven>
@@ -484,5 +502,7 @@
     </profiles>
 	<modules>
 		<module>deployment</module>
+		<module>arq-helper</module>
+		<!--module>validation</module-->
 	</modules>
 </project>

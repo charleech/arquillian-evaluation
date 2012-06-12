@@ -25,4 +25,22 @@
 			The JBoss Arquillian.
 		</my.project.description>
 	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.shrinkwrap.resolver</groupId>
+			<artifactId>shrinkwrap-resolver-impl-maven</artifactId>
+			<scope>${my.project.dependency.provided.scope}</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.shrinkwrap.descriptors</groupId>
+			<artifactId>shrinkwrap-descriptors-impl-javaee</artifactId>
+			<scope>$my.project.dependency.provided.scope}</scope>
+		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${my.junit.version}</version>
+            <scope>${my.project.dependency.provided.scope}</scope>
+        </dependency>
+	</dependencies>
 </project>
