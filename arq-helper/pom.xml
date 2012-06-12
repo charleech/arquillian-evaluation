@@ -1,46 +1,46 @@
 <?xml version="1.0"?>
 <project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-	                    http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                        http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<artifactId>arquillian-evaluation</artifactId>
-		<groupId>org.charleech.arq.eval</groupId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <artifactId>arquillian-evaluation</artifactId>
+        <groupId>org.charleech.arq.eval</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 
-	<groupId>org.charleech.arq.eval</groupId>
-	<artifactId>arq-helper</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+    <groupId>org.charleech.arq.eval</groupId>
+    <artifactId>arq-helper</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
-	<name>arq-helper</name>
+    <name>arq-helper</name>
 
-	<properties>
-		<my.project.description>
-			This is a project which provides the utilities for testing with
-			The JBoss Arquillian.
-		</my.project.description>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.jboss.shrinkwrap.resolver</groupId>
-			<artifactId>shrinkwrap-resolver-impl-maven</artifactId>
-			<scope>${my.project.dependency.provided.scope}</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.shrinkwrap.descriptors</groupId>
-			<artifactId>shrinkwrap-descriptors-impl-javaee</artifactId>
-			<scope>${my.project.dependency.provided.scope}</scope>
-		</dependency>
+    <properties>
+        <my.project.description>
+            This is a project which provides the utilities for testing with
+            The JBoss Arquillian.
+        </my.project.description>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <artifactId>shrinkwrap-resolver-impl-maven</artifactId>
+            <scope>${my.project.dependency.provided.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+            <artifactId>shrinkwrap-descriptors-impl-javaee</artifactId>
+            <scope>${my.project.dependency.provided.scope}</scope>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${my.junit.version}</version>
             <scope>${my.project.dependency.provided.scope}</scope>
-        </dependency>
-	</dependencies>
+            </dependency>
+    </dependencies>
 </project>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -41,7 +44,7 @@
             provided
         </my.project.dependency.provided.scope>
         <!-- Plugin -->
-		<my.maven.compiler.version>2.4</my.maven.compiler.version>
+        <my.maven.compiler.version>2.4</my.maven.compiler.version>
         <my.maven.resource.version>2.5</my.maven.resource.version>
         <my.maven.surefire.version>2.12</my.maven.surefire.version>
         <my.maven.surefire.jvm.memory>
@@ -62,7 +65,7 @@
         <my.jaxb.osgi.version>2.2.5</my.jaxb.osgi.version>
         <my.glassfish.metro.version>2.2</my.glassfish.metro.version>
         <my.junit.version>4.10</my.junit.version>
-	</properties>
+    </properties>
 
     <description>
         ${my.project.description}
@@ -72,19 +75,19 @@
 
     <inceptionYear>${my.project.inception.year}</inceptionYear>
 
-	<licenses>
-		<license>
-			<name>
+    <licenses>
+        <license>
+            <name>
                 Creative Commons Attribution-NonCommercial-ShareAlike 3.0
                 Unported License
-			</name>
-			<url>http://creativecommons.org/licenses/by-nc-sa/3.0/</url>
-			<comments>
+            </name>
+            <url>http://creativecommons.org/licenses/by-nc-sa/3.0/</url>
+            <comments>
                 Please feel free and do not hesitate to join, fork, share or
                 keep improving it.
             </comments>
-		</license>
-	</licenses>
+        </license>
+    </licenses>
 
     <organization>
         <name>Charlee Chitsuk</name>
@@ -257,13 +260,13 @@
             <groupId>org.jboss.weld</groupId>
             <artifactId>weld-core</artifactId>
             <version>${my.weld.version}</version>
-            <scope>${my.project.dependency.scope}</scope>
+            <scope>${my.project.dependency.provided.scope}</scope>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${my.hibernate.validator.version}</version>
-            <scope>${my.project.dependency.scope}</scope>
+            <scope>${my.project.dependency.provided.scope}</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.solder</groupId>
@@ -418,13 +421,13 @@
                     <groupId>org.hibernate</groupId>
                     <artifactId>hibernate-validator</artifactId>
                     <version>${my.hibernate.validator.version}</version>
-                    <scope>${my.project.dependency.scope}</scope>
+                    <scope>${my.project.dependency.provided.scope}</scope>
                 </dependency>
                 <dependency>
                     <groupId>org.jboss.weld</groupId>
                     <artifactId>weld-osgi-bundle</artifactId>
                     <version>${my.weld.version}</version>
-                    <scope>${my.project.dependency.test.scope}</scope>
+                    <scope>${my.project.dependency.provided.scope}</scope>
                 </dependency>
                 <dependency>
                     <groupId>org.osgi</groupId>
@@ -436,13 +439,13 @@
                     <groupId>org.glassfish.metro</groupId>
                     <artifactId>webservices-osgi</artifactId>
                     <version>${my.glassfish.metro.version}</version>
-                    <scope>${my.project.dependency.test.scope}</scope>
+                    <scope>${my.project.dependency.provided.scope}</scope>
                 </dependency>
                 <dependency>
                     <groupId>org.glassfish.metro</groupId>
                     <artifactId>webservices-api-osgi</artifactId>
                     <version>${my.glassfish.metro.version}</version>
-                    <scope>${my.project.dependency.test.scope}</scope>
+                    <scope>${my.project.dependency.provided.scope}</scope>
                 </dependency>
                 <dependency>
                     <groupId>org.jboss.shrinkwrap.resolver</groupId>
@@ -500,9 +503,9 @@
             </dependencies>
         </profile>
     </profiles>
-	<modules>
-		<module>deployment</module>
-		<module>arq-helper</module>
-		<!--module>validation</module-->
-	</modules>
+    <modules>
+        <module>deployment</module>
+        <module>arq-helper</module>
+        <!--module>validation</module-->
+    </modules>
 </project>
