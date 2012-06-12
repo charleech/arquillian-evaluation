@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>org.jboss.shrinkwrap.descriptors</groupId>
 			<artifactId>shrinkwrap-descriptors-impl-javaee</artifactId>
-			<scope>$my.project.dependency.provided.scope}</scope>
+			<scope>${my.project.dependency.provided.scope}</scope>
 		</dependency>
         <dependency>
             <groupId>junit</groupId>
