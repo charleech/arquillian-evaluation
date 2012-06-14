@@ -1,10 +1,12 @@
 package test.org.charleech.arq.eval.deploy;
 
 import javax.ejb.EJB;
+import javax.inject.Inject;
 
 import junit.framework.Assert;
 
 import org.charleech.arq.eval.deploy.DummyServiceable;
+import org.charleech.arq.eval.deploy.DummyWrapper;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.spec.EnterpriseArchive;
@@ -44,17 +46,27 @@ public class EarTester1 {
      */
     @Deployment
     public static EnterpriseArchive deploy() {
-        return ArchivePreparation.getINSTANCE().getDeploying();
+        return ArchivePreparation.getINSTANCE().getDeploying(
+                  String.valueOf(System.currentTimeMillis()));
     }
 
     /**
      * This is a variable which represents the EJB which is deployed by the
-     * Arquillian for testing.
+     * Arquillian for testing the EJB injection.
      *
      * @since 0.0.1
      */
     @EJB
     private DummyServiceable dummyService;
+
+    /**
+     * This is a variable which represent the {@link DummyWrapper} for testing
+     * the CDI injection.
+     *
+     * @since 0.0.1
+     */
+    @Inject
+    private DummyWrapper wrapper;
 
     /**
      * This is a success test case for ensuring that the Arquillian deploy
@@ -67,8 +79,15 @@ public class EarTester1 {
         String name   = "Charlee";
         String result = null;
         try {
+            Assert.assertNotNull("The dummy wraper is null.",
+                    this.wrapper);
+
+            this.wrapper.dummy();
+
             Assert.assertNotNull("The dummy service is null.",
                                  this.dummyService);
+
+
             result = this.dummyService.greet(name);
             Assert.assertEquals("The result is unexpected.",
                                 "Hello ".concat(name),
@@ -78,4 +97,5 @@ public class EarTester1 {
             result = null;
         }
     }
+
 }
