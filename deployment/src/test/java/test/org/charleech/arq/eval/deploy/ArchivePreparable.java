@@ -30,8 +30,10 @@ public interface ArchivePreparable<T extends Archive<T>> {
     /**
      * Get the deploying ShrinkWrap {@link Archive}.
      *
+     * @param prefix
+     *            The {@link Archive} prefix name
      * @return The deploying ShrinkWrap {@link Archive}.
      * @since 0.0.1
      */
-    T getDeploying();
+    T getDeploying(final String prefix);
 }

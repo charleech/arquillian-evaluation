@@ -87,28 +87,25 @@ public final class ArchivePreparation
     }
 
     @Override
-    public EnterpriseArchive getDeploying() {
-        EnterpriseArchive ear = null;
-        try {
-            ear = this.createEar();
-            return ear;
-        } finally {
-            ear = null;
-        }
+    public EnterpriseArchive getDeploying(final String prefix) {
+        return this.createEar(prefix);
     }
 
     /**
      * Create {@link EnterpriseArchive}.
      *
+     * @param prefix
+     *            The prefix name
      * @return The created {@link EnterpriseArchive}
      * @since 0.0.1
      */
-    private EnterpriseArchive createEar() {
+    private EnterpriseArchive createEar(final String prefix) {
         EnterpriseArchive ear = null;
         try {
             ear = ShrinkWrap.create(EnterpriseArchive.class,
-                                    ArquillianConstant.
-                                       EAR_ARCHIVE_NAME.getValue()).
+                                    prefix.concat(
+                                       ArquillianConstant.
+                                          EAR_ARCHIVE_NAME.getValue())).
                      addAsApplicationResource(this.getApplicationXml(),
                                               ArquillianFeatureConstant.
                                                  APPLICATION.getValue()).
