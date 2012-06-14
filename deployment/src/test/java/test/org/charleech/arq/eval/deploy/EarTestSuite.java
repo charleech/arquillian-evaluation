@@ -1,6 +1,7 @@
 package test.org.charleech.arq.eval.deploy;
 
 import org.charleech.arq.eval.helper.AbstractTestSuite;
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -36,4 +37,14 @@ import org.junit.runners.Suite.SuiteClasses;
 })
 public class EarTestSuite extends AbstractTestSuite {
 
+    /**
+     * This is an after class configuration which will delete all created
+     * archives form the default archive folder.
+     *
+     * @since 0.0.1
+     */
+    @AfterClass
+    public static void tearDownAfterClass() {
+        AbstractTestSuite.clearCreatedArquillianArchives();
+    }
 }
