@@ -346,7 +346,7 @@
                 </my.glassfish.embedded.version>
                 <my.arquillian.version>1.0.1.Final</my.arquillian.version>
                 <my.arquillian.glassfish.version>
-                    1.0.0.CR3
+                    1.0.0.Final-SNAPSHOT
                 </my.arquillian.glassfish.version>
                 <my.shrinkwrap.resolver.version>
                     2.0.0-alpha-1
@@ -356,7 +356,7 @@
                 </my.shrinkwrap.descriptor.version>
                 <!-- Arquillian GF Embedded -->
                 <my.arquillian.glassfish.http.port>
-                    14080
+                    14079
                 </my.arquillian.glassfish.http.port>
                 <my.arquillian.glassfish.root>
                     ${env.ARQUILLIAN_GF_ROOT}/mygf
