@@ -98,7 +98,7 @@ public final class EclipseWrapper extends AbstractMarker
 
             System.setProperty(ArquillianConfigureConstant.
                                   GfBindHttpPort.getValue(),
-                               "14080");
+                               "14079");
             System.setProperty(ArquillianConfigureConstant.
                                   GfInstallRoot.getValue(),
                                root.concat("/mygf"));
