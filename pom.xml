@@ -43,6 +43,9 @@
         <my.project.dependency.provided.scope>
             provided
         </my.project.dependency.provided.scope>
+        <my.project.dependency.runtime.scope>
+            runtime
+        </my.project.dependency.runtime.scope>
         <!-- Plugin -->
         <my.maven.compiler.version>2.4</my.maven.compiler.version>
         <my.maven.resource.version>2.5</my.maven.resource.version>
@@ -272,13 +275,13 @@
             <groupId>org.jboss.solder</groupId>
             <artifactId>solder-api</artifactId>
             <version>${my.seam.solder.version}</version>
-            <scope>${my.project.dependency.scope}</scope>
+            <scope>${my.project.dependency.runtime.scope}</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.solder</groupId>
             <artifactId>solder-impl</artifactId>
             <version>${my.seam.solder.version}</version>
-            <scope>${my.project.dependency.scope}</scope>
+            <scope>${my.project.dependency.runtime.scope}</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.seam.validation</groupId>
@@ -290,7 +293,7 @@
             <groupId>org.jboss.seam.validation</groupId>
             <artifactId>seam-validation</artifactId>
             <version>${my.seam.validation.version}</version>
-            <scope>${my.project.dependency.scope}</scope>
+            <scope>${my.project.dependency.runtime.scope}</scope>
         </dependency>
         <!-- Test -->
         <dependency>
