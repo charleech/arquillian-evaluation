@@ -29,7 +29,7 @@ import org.slf4j.Marker;
 public abstract class AbstractMarker implements Markable {
 
     @Override
-    public final Marker getMarker() {
+    public Marker getMarker() {
         return MarkerWrapper.getINSTANCE().getMarker(this.getClass());
     }
 }
