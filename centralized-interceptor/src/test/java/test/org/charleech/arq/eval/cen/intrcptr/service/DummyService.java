@@ -5,11 +5,11 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.jws.WebService;
 
-import org.charleech.arq.eval.cen.intrcptr.DummyUtil;
 import org.charleech.arq.eval.cen.intrcptr.ftprnt.FootprintInterceptable;
 import org.charleech.arq.eval.cen.intrcptr.prfrmnc.PerformanceInterceptable;
 
 import test.org.charleech.arq.eval.cen.intrcptr.local.DummyManageable;
+import test.org.charleech.arq.eval.cen.intrcptr.util.DummyUtil;
 
 /**
  * <p>

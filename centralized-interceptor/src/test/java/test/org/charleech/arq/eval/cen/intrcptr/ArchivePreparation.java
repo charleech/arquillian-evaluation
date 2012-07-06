@@ -18,6 +18,7 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 
 import test.org.charleech.arq.eval.cen.intrcptr.local.DummyManageable;
 import test.org.charleech.arq.eval.cen.intrcptr.service.DummyServiceable;
+import test.org.charleech.arq.eval.cen.intrcptr.util.DummyUtil;
 
 /**
  * <p>
@@ -121,7 +122,8 @@ public final class ArchivePreparation
                                 DummyServiceable.class.getPackage()).
                     addPackages(true,
                                 DummyManageable.class.getPackage()).
-                    addAsLibraries(this.createLib());
+                    addAsLibraries(this.createLib()).
+                    addAsLibraries(this.createLib2());
             ArchivePreparation.log.info(this.getMarker(),
                                         "The deploying web is\r\n{}",
                                          web.toString(true));
@@ -152,6 +154,40 @@ public final class ArchivePreparation
 
             ArchivePreparation.log.info(this.getMarker(),
                     "The deploying lib is\r\n{}",
+                     lib.toString(true));
+
+            return lib;
+        } finally {
+            lib = null;
+        }
+    }
+
+    /**
+     * Create java library for web application.
+     * <p>
+     * The lib2 is a big point. Even the interceptor is enabled via its
+     * beans.xml, it is not activated. Sadly, we need to set the
+     * glassfish-web-.xml as &lt;class-loader delegate="false"/&gt;
+     * </p>
+     *
+     *
+     * @return The created java library for web application
+     * @since 0.0.1
+     */
+    private JavaArchive createLib2() {
+        JavaArchive lib = null;
+        try {
+            lib = ShrinkWrap.create(JavaArchive.class, "my-lib2.jar").
+                     addAsManifestResource(this.getEmptyBeansXml(),
+                            ArquillianFeatureConstant.
+                               BEANS.getValue()).
+                     addAsResource(this.getLogbackTestXml(),
+                                   ArquillianFeatureConstant.
+                                      LOG_BACK_TEST.getValue()).
+                     addClass(DummyUtil.class);
+
+            ArchivePreparation.log.info(this.getMarker(),
+                    "The deploying lib 2 is\r\n{}",
                      lib.toString(true));
 
             return lib;
