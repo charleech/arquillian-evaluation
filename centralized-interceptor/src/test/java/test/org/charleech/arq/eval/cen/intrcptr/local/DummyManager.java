@@ -6,8 +6,7 @@ import javax.inject.Named;
 
 import lombok.extern.slf4j.Slf4j;
 
-import org.charleech.arq.eval.cen.intrcptr.ftprnt.FootprintInterceptable;
-import org.charleech.arq.eval.cen.intrcptr.prfrmnc.PerformanceInterceptable;
+import org.charleech.arq.eval.cen.intrcptr.CentralizedInterceptable;
 import org.charleech.arq.eval.helper.AbstractMarker;
 
 import test.org.charleech.arq.eval.cen.intrcptr.service.DummyWrapper;
@@ -36,8 +35,7 @@ import test.org.charleech.arq.eval.cen.intrcptr.service.DummyWrapper;
  *      Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
  */
 @Named
-@FootprintInterceptable
-@PerformanceInterceptable
+@CentralizedInterceptable
 @Stateless
 @Slf4j
 public class DummyManager extends AbstractMarker implements DummyManageable {

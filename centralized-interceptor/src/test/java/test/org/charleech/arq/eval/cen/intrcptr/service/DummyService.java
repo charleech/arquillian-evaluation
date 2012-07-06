@@ -5,8 +5,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.jws.WebService;
 
-import org.charleech.arq.eval.cen.intrcptr.ftprnt.FootprintInterceptable;
-import org.charleech.arq.eval.cen.intrcptr.prfrmnc.PerformanceInterceptable;
+import org.charleech.arq.eval.cen.intrcptr.CentralizedInterceptable;
 
 import test.org.charleech.arq.eval.cen.intrcptr.local.DummyManageable;
 import test.org.charleech.arq.eval.cen.intrcptr.util.DummyUtil;
@@ -34,8 +33,7 @@ import test.org.charleech.arq.eval.cen.intrcptr.util.DummyUtil;
  *      Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
  */
 @Named
-@FootprintInterceptable
-@PerformanceInterceptable
+@CentralizedInterceptable
 @Stateless
 @WebService(
    endpointInterface =
