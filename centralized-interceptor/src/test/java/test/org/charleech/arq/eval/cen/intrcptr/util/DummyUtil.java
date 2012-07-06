@@ -2,8 +2,7 @@ package test.org.charleech.arq.eval.cen.intrcptr.util;
 
 import lombok.extern.slf4j.Slf4j;
 
-import org.charleech.arq.eval.cen.intrcptr.ftprnt.FootprintInterceptable;
-import org.charleech.arq.eval.cen.intrcptr.prfrmnc.PerformanceInterceptable;
+import org.charleech.arq.eval.cen.intrcptr.CentralizedStereotype;
 
 /**
  * <p>
@@ -27,8 +26,7 @@ import org.charleech.arq.eval.cen.intrcptr.prfrmnc.PerformanceInterceptable;
  *      href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative
  *      Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
  */
-@FootprintInterceptable
-@PerformanceInterceptable
+@CentralizedStereotype
 @Slf4j
 public class DummyUtil {
 
