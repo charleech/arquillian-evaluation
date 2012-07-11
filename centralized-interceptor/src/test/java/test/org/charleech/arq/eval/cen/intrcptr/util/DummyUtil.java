@@ -29,8 +29,45 @@ import org.charleech.arq.eval.cen.intrcptr.CentralizedStereotype;
 @CentralizedStereotype
 @Slf4j
 public class DummyUtil {
-
+    /**
+     * This is the dummy utility method.
+     *
+     * @since 0.0.1
+     */
     public void dummyUtil() {
         DummyUtil.log.info("This is dummy util");
+        this.publicUtil();
+    }
+
+    /**
+     * This is the dummy utility method. It is invoked directly by the
+     * {@link #dummyUtil()}, the it is not a business method.
+     *
+     * @since 0.0.1
+     */
+    public void publicUtil() {
+        DummyUtil.log.info("This is dummy util public method.");
+        this.protectedUtil();
+    }
+
+    /**
+     * This is the dummy utility method. It is invoked directly by the
+     * {@link #publicUtil()}, the it is not a business method.
+     *
+     * @since 0.0.1
+     */
+    protected void protectedUtil() {
+        DummyUtil.log.info("This is dummy util protected method.");
+        this.privateUtil();
+    }
+
+    /**
+     * This is the dummy utility method. It is invoked directly by the
+     * {@link #protectedUtil()}, the it is not a business method.
+     *
+     * @since 0.0.1
+     */
+    private void privateUtil() {
+        DummyUtil.log.info("This is dummy util private method.");
     }
 }
