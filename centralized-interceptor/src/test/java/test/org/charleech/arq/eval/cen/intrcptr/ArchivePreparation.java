@@ -19,6 +19,7 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import test.org.charleech.arq.eval.cen.intrcptr.local.DummyManageable;
 import test.org.charleech.arq.eval.cen.intrcptr.service.DummyServiceable;
 import test.org.charleech.arq.eval.cen.intrcptr.util.DummyUtil;
+import test.org.charleech.arq.eval.cen.intrcptr.web.DummyWebServiceable;
 
 /**
  * <p>
@@ -124,9 +125,8 @@ public final class ArchivePreparation
                                 DummyServiceable.class.getPackage()).
                     addPackages(true,
                                 DummyManageable.class.getPackage()).
+                    addPackage(DummyWebServiceable.class.getPackage()).
                     addAsLibraries(this.createLib()).
-                    //The lib2 is a big point, please see javadoc for further
-                    //information
                     addAsLibraries(this.createLib2());
             ArchivePreparation.log.info(this.getMarker(),
                                         "The deploying web is\r\n{}",
@@ -168,19 +168,6 @@ public final class ArchivePreparation
 
     /**
      * Create java library for web application.
-     * <p>
-     * The lib2 is a big point. Even the interceptor is enabled via its
-     * beans.xml, it is not activated. Sadly, we need to set the
-     * glassfish-web-.xml as &lt;class-loader delegate="false"/&gt;
-     * </p>
-     * <p>
-     * It's depended on the class loader, the first library (sorted by name)
-     * which the container first found beans.xml
-     * </p>
-     * <p>
-     * If the first not mentions interceptor, Even the sencond mentions
-     * intereptor, all the rest are ignored.
-     * </p>
      *
      * @return The created java library for web application
      * @since 0.0.1
