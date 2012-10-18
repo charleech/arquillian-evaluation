@@ -5,6 +5,9 @@ import java.util.Set;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.jws.WebService;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
@@ -54,10 +57,18 @@ public class DummyService extends AbstractMarker implements DummyServiceable {
     @Inject
     private Validator validator;
 
+    public static final EntityManagerFactory EMF;
+
+    static {
+        EMF = Persistence.createEntityManagerFactory("mydb");
+    }
+
     @Override
     public String greet(final Person person) {
         String                           result     = null;
         Set<ConstraintViolation<Person>> violations = null;
+        Person                           data       = null;
+        EntityManager                    em         = null;
         try {
             violations = this.validator.validate(person);
 
@@ -67,12 +78,34 @@ public class DummyService extends AbstractMarker implements DummyServiceable {
             } else {
                 result = "Hello " + person.getName();
             }
+
+            em = DummyService.EMF.createEntityManager();
+
+            em.persist(person);
+
+            data = em.find(Person.class, person.getId());
+
+            if (data == null) {
+                DummyService.log.warn(this.getMarker(),
+                                      "Cannot find by using id as {}",
+                                      person.getId());
+            } else {
+                DummyService.log.info(this.getMarker(),
+                                      "The found data is {}",
+                                      data);
+            }
+
             return result;
         } finally {
             result = null;
+            data   = null;
             if (violations != null) {
                 violations.clear();
                 violations = null;
+            }
+            if ((em != null) && (em.isOpen())) {
+                em.close();
+                em = null;
             }
         }
     }

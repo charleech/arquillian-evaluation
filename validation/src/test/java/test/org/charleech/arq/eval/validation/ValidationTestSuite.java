@@ -31,8 +31,8 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses({
-    ValidationNormalTestGroup.class,
-    ValidationExtendedTestGroup.class,
+//    ValidationNormalTestGroup.class,
+//    ValidationExtendedTestGroup.class,
     ValidationCustomizedTestGroup.class
 })
 public class ValidationTestSuite extends AbstractTestSuite {

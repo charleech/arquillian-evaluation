@@ -2,11 +2,16 @@ package org.charleech.arq.eval.validation.bean;
 
 import java.io.Serializable;
 
-import org.charleech.arq.eval.validation.custom.PersonValid;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+
+import org.charleech.arq.eval.validation.custom.PersonValid;
 /**
  * <p>
  * This is a concrete implementing class which provides the feature as a Person
@@ -40,6 +45,10 @@ import lombok.ToString;
         includeFieldNames = true,
         doNotUseGetters   = false
 )
+@Entity
+@Table(
+        name = "Person"
+        )
 @PersonValid
 public class Person implements Serializable {
 
@@ -55,6 +64,12 @@ public class Person implements Serializable {
      *
      * @since 0.0.1
      */
+    @Id
+    @Column(
+            name     = "ID",
+            nullable = false,
+            length   = 36
+    )
     private String id;
 
     /**
@@ -62,5 +77,10 @@ public class Person implements Serializable {
      *
      * @since 0.0.1
      */
+    @Column(
+            name     = "NAME",
+            nullable = false,
+            length   = 255
+    )
     private String name;
 }

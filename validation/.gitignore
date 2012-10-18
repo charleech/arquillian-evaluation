@@ -1,1 +1,4 @@
 /target
+/createDDL.jdbc
+/derby.log
+/dropDDL.jdbc

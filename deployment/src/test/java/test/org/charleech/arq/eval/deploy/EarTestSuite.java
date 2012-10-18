@@ -31,8 +31,8 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses({
-    EarTester1.class,
-    EarTester1.class,
+//    EarTester1.class,
+//    EarTester1.class,
     EarTester1.class
 })
 public class EarTestSuite extends AbstractTestSuite {

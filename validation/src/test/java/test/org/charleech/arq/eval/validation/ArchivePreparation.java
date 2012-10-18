@@ -154,7 +154,10 @@ public final class ArchivePreparation
                                       LOG_BACK_TEST.getValue()).
                      addPackages(true, DummyServiceable.class.getPackage()).
                      addPackages(true, Person.class.getPackage()).
-                     addPackages(true, ValidationWrappable.class.getPackage());
+                     addPackages(true, ValidationWrappable.class.getPackage()).
+                     addAsManifestResource(this.getPersistenceXml(),
+                                           ArquillianFeatureConstant.
+                                              PERSISTENCE.getValue());
 
             switch (mode) {
                 case NORMAL:
@@ -258,6 +261,17 @@ public final class ArchivePreparation
      */
     private File getCustomizedValidationXml() {
         return this.asFileFromJaveEE("/validation-customized.xml");
+    }
+
+    /**
+     * Get the persistence.xml configuration file.
+     *
+     * @return The persistence.xml configuration file.
+     * @since 0.0.1
+     */
+    private File getPersistenceXml() {
+        return this.asFileFromJaveEE(
+                ArquillianFeatureConstant.PERSISTENCE.getValue());
     }
 
     /**
